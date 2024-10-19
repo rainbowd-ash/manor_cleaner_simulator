@@ -1,5 +1,5 @@
 import sys
-import random as r
+import random as rand
 
 # discussing rooms
 # (x,y)
@@ -33,8 +33,23 @@ class world:
 	
 	def reset(self):
 		self.rooms = [[ room(x, y) for x in range(0, self.width)] for y in range(0, self.height)]
+	
 	def room(self, x, y):
+		if x < 0 or y < 0 or x >= self.width or y >= self.height:
+			return None
 		return self.rooms[y][x]
+	
+	def adjacent_rooms(self, x, y):
+		r = []
+		if self.room(x-1,y):
+			r.append(self.room(x-1,y))
+		if self.room(x+1,y):
+			r.append(self.room(x+1,y))
+		if self.room(x,y-1):
+			r.append(self.room(x,y-1))
+		if self.room(x,y+1):
+			r.append(self.room(x,y+1))
+		return r
 	
 	def get_room_list(self):
 		r = []
@@ -52,7 +67,7 @@ class world:
 		clean_rooms =  list(filter(lambda x: x.clean == True, self.get_room_list()))
 		if quantity >= len(clean_rooms):
 			quantity = len(clean_rooms)
-		r.shuffle(clean_rooms)
+		rand.shuffle(clean_rooms)
 		for i in range(0, quantity):
 			clean_rooms[i].clean = False
 	
