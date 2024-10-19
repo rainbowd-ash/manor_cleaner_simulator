@@ -2,9 +2,10 @@ import dirt_world as world
 import vac_bot as agent
 
 debug_step_by_step = False
+debug_draw_world = True
 
 dirt_world = world.world()
-agent = agent.random_bot()
+agent = agent.rational_bot()
 run_score = 0
 
 def draw_world():
@@ -33,10 +34,12 @@ def all_clean():
 	return True
 
 # -------------------------------
-dirt_world.make_n_rooms_dirty(1)
+dirt_world.make_n_rooms_dirty(5)
 
 # main loop
 while not all_clean():
+	if debug_draw_world:
+		draw_world()
 	# update agent info
 	agent.current_room = dirt_world.room(agent.x, agent.y)
 	agent.adjacent_rooms = dirt_world.adjacent_rooms(agent.x, agent.y)
