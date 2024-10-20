@@ -5,7 +5,7 @@ Or, Vacuum World: an exploration of rationality
 What is *rational* at any given moment depends upon four things: the ability to tell between right and wrong (a *performance metric*), everything you can remember, a way to perceive linear time (some events happen before other events), and intimate knowledge of the action-set available in the coming moments.
 
 ## How to Run
-`python3 manor_cleaner_simulator.py`
+`> python3 manor_cleaner_simulator.py`
 
 ## Backstory
 In a remote country, you are the last heiress of a doomed house, awaiting salvation. The last remaining manservant has taken the horses and carriage to the capital. He told you that he hopes to appeal to the daughter of a man your father once called friend. Both of your fathers have been dead for years. It's possible she has never heard of your lowly family.
@@ -25,3 +25,5 @@ The robots will be run over a series of trials and scored. After tracking 100 ru
 As a performance metric, each time the bot moves or sucks nothing, it gets 1 point. Once the manor is cleaned, the test is stopped and the result is tallied. Lower scores are better.
 
 This metric should encourage desired behaviour (cleaning fast) while minimizing undesired behaviour (moving around doing nothing).
+
+CHAOS WORLD is impemented weirdly, but the deadline approaches.
